@@ -22,7 +22,7 @@ const generateToken = (role) => {
 const verifyToken = (token) => {
 	const decoded = jwt.verify(token, JWTSECRET)
 	if(decoded.role == "admin" || decoded.role == "viewer" || decoded.role == "editor"){
-		return next()
+		return "Valid token"
 	}
 	return "Invalid token"
 }
